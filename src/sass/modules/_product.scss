@@ -1,0 +1,24 @@
+.productInfo {
+  display: flex;
+  width: 350px;
+  padding: 0 20px;
+  justify-content: space-between;
+  .productDescription {
+    flex-basis: 260px;
+    font-size: 14px;
+    color: $blue-color;
+  }
+  .productOrdered {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &__price {
+      color: $gray-color;
+    }
+    &__total {
+      color: #000;
+      font-weight: bold;
+      
+    }
+  }
+}

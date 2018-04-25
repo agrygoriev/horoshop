@@ -4,20 +4,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Horoshop</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=cyrillic">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
   <main>
     <h1>Оформление заказа</h1>
-    <section class="mainForm">
-      
-    </section>
-    <section class="product">
-
-    </section>
+    <div class="wrapper">
+      <section class="mainForm">
+        <div class="tabs">
+          <a class="tabs__tab tabs__tab_selected" href="#">
+            Я новый<br>покупатель
+          </a>
+          <a class="tabs__tab" href="#">
+            Я зарегистрированный<br>покупатель
+          </a>
+        </div>
+        <form class="orderCheckout" action="submit" name="order-checkout" >
+          <section class="formPart">
+          <h2 class="orderCheckout__heading">Получатель заказа</h2>
+            <div>
+              <div class="orderCheckoutFieldset">
+                <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_gray" for="name">Имя и фамилия</label>
+                <input  class="orderCheckoutFieldset__input" type="text" id=name>
+              </div>
+            </div>
+            <div class="orderCheckoutFieldset">
+              <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_gray" for="phone">Номер телефона</label>
+              <input  class="orderCheckoutFieldset__input" type="text" id=phone>
+            </div>
+            <div class="orderCheckoutFieldset">
+              <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_gray" for="city">Город</label>
+              <input  class="orderCheckoutFieldset__input" type="text" id=city placeholder="Киев">
+            </div>
+            <div class="orderCheckoutFieldset">
+              <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_gray" for="email">Эл. почта</label>
+              <input  class="orderCheckoutFieldset__input" type="text" id=email placeholder="user@mail.com">
+            </div>
+            <div class="orderCheckoutFieldset">
+                <label class="orderCheckoutFieldset__label" for="textarea"></label>
+              <a class="orderCheckoutFieldset__link" href="#">Добавить комментарий к заказу</a>
+              <textarea class="orderCheckoutFieldset__textarea orderCheckoutFieldset__textarea_hidden" name="textarea" rows="10" placeholder="Добавьте комментарий"></textarea>
+            </div>
+          </section>
+          <hr class="orderCheckout__divider">
+          <section class="formPart">
+            <div class="orderCheckoutFieldset">
+              <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_bold" for="delivery">Доставка</label>
+              <select class="orderCheckoutFieldsetSelect" name="delivery">
+                <option class="orderCheckoutFieldset__option" value="value1">Укрпошта</option> 
+                <option class="orderCheckoutFieldset__option" value="value2" selected>"Нова пошта" &dash; 25 грн.</option>
+                <option class="orderCheckoutFieldset__option" value="value3">Самовывоз</option>
+              </select>
+            </div>
+            <div class="orderCheckoutFieldset">
+              <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_gray" for="address">Адрес склада</label>
+              <select  class="orderCheckoutFieldsetSelect" name="address">
+                <option class="orderCheckoutFieldset__option" value="value1">Львов, отделение №6 (до 30 кг): ул. Франко, 15</option> 
+                <option class="orderCheckoutFieldset__option" value="value2" selected>Львов, отделение №8 (до 30 кг): ул. Гетьмана И. Мазепы, 37</option>
+                <option class="orderCheckoutFieldset__option" value="value3">Львов, отделение №10 (до 30 кг): ул. Шевченко, 60</option>
+              </select>
+            </div>
+          </section>
+          <hr class="orderCheckout__divider">
+          <section class="formPart">
+            <div class="orderCheckoutFieldset">
+              <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_bold" for="paying">Оплата</label>
+              <select  class="orderCheckoutFieldsetSelect" name="paying">
+                <option class="orderCheckoutFieldset__option" value="value1">наличными курьеру</option> 
+                <option class="orderCheckoutFieldset__option" value="value2" selected>наложенный платеж</option>
+                <option class="orderCheckoutFieldset__option" value="value3">перевод на карту</option>
+              </select>
+            </div>
+          </section>
+          <hr class="orderCheckout__divider">
+          <section class="formPart">
+            <button class="orderCheckoutButton" name="submit-order" form="order-checkout" type="submit">Оформить заказ</button>
+          </section>
+        </form>
+        <form class="orderCheckout orderCheckout_hidden" action="submit" name="order-checkout-registered" >
+          <h2>Получатель заказа</h2>
+          <div class="orderCheckoutFieldset">
+            <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_gray" for="registered-name">Имя и фамилия</label>
+            <input  class="orderCheckoutFieldset__input" type="text" id=registered-name>
+          </div>
+          <div class="orderCheckoutFieldset">
+            <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_gray" for="registered-phone">Номер телефона</label>
+            <input  class="orderCheckoutFieldset__input" type="text" id=registered-phone>
+          </div>
+          <div class="orderCheckoutFieldset">
+            <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_gray" for="registered-city">Город</label>
+            <input  class="orderCheckoutFieldset__input" type="text" id=registered-city placeholder="Киев">
+          </div>
+          <div class="orderCheckoutFieldset">
+            <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_gray" for="registered-email">Эл. почта</label>
+            <input  class="orderCheckoutFieldset__input" type="text" id=registered-email placeholder="user@mail.com">
+          </div>
+          <div class="orderCheckoutFieldset">
+            <label class="orderCheckoutFieldset__label" for="textarea"></label>
+            <a class="orderCheckoutFieldset__link" href="#">Добавить комментарий к заказу</a>
+            <textarea class="orderCheckoutFieldset__textarea orderCheckoutFieldset__textarea_hidden" name="registered-textarea" rows="10" placeholder="Добавьте комментарий"></textarea>
+          </div>
+          <div class="orderCheckoutFieldset">
+            <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_bold" for="registered-delivery">Доставка</label>
+            <select  class="orderCheckoutFieldsetSelect" name="registered-delivery">
+              <option class="orderCheckoutFieldset__option" value="value1">Укрпошта</option> 
+              <option class="orderCheckoutFieldset__option" value="value2" selected>"Нова пошта" &dash; 25 грн.</option>
+              <option class="orderCheckoutFieldset__option" value="value3">Самовывоз</option>
+            </select>
+          </div>
+          <div class="orderCheckoutFieldset">
+            <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_gray" for="registered-delivery-address">Адрес склада</label>
+            <select  class="orderCheckoutFieldsetSelect" name="registered-delivery-address">
+              <option class="orderCheckoutFieldset__option" value="value1">Львов, отделение №6 (до 30 кг): ул. Гетьмана И. Выговского, 15</option> 
+              <option class="orderCheckoutFieldset__option" value="value2" selected>Львов, отделение №8 (до 30 кг): ул. Гетьмана И. Мазепы, 37</option>
+              <option class="orderCheckoutFieldset__option" value="value3">Львов, отделение №10 (до 30 кг): ул. Гетьмана П. Сагайдачного, 60</option>
+            </select>
+          </div>
+          <div class="orderCheckoutFieldset">
+            <label class="orderCheckoutFieldset__label orderCheckoutFieldset__label_bold" for="registered-paying">Оплата</label>
+            <select  class="orderCheckoutFieldsetSelect" name="registered-paying">
+              <option class="orderCheckoutFieldset__option" value="value1">наличными курьеру</option> 
+              <option class="orderCheckoutFieldset__option" value="value2" selected>наложенный платеж</option>
+              <option class="orderCheckoutFieldset__option" value="value3">перевод на карту</option>
+            </select>
+          </div>
+          <button class="orderCheckoutButton" name="registered-submit-order" form="order-checkout-registered" type="submit">Оформить заказ</button>
+        </form>
+      </section>
+      <section class="order">
+        <h2 class="order__heading">Ваш заказ</h2>
+        <hr class="orderCheckout__divider">
+        <ul class="productsOrdered">
+          <li class="product">
+            <div class="productInfo">
+              <img class="productInfo__image" src="img/photo.png" alt="Photo camera">
+              <div class="productDescription">
+                <a class="productDescription__link" href="#">Цифровий фотоапарат Nikon D5100 kit (18-55 VR)</a>
+                <div class="productOrdered">
+                  <div class="productOrdered__price"><span class="productOrdered__price-final">6 568 грн.</span> х <span class="productOrdered__quantity">1</span> шт.</div>
+                  <div class="productOrdered__total"><span>6 568</span> грн.</div>
+                </div>
+              </div>
+            </div>
+            <hr class="orderCheckout__divider">
+          </li>
+          <li class="product">
+            <div class="productInfo">
+              <img class="productInfo__image" src="img/player.png" alt="Apple iPod Touch mp3-player">
+              <div class="productDescription">
+                <a class="productDescription__link" href="#">MP3-плеер Apple iPod Touch 5Gen 32Gb blue</a>
+                <div class="productOrdered">
+                  <div class="productOrdered__price">
+                    <span class="productOrdered__price_final">3 689 грн.</span> х <span class="productOrderedPrice__quantity">1</span> шт.
+                  </div>
+                  <div class="productOrdered__total">
+                    <span class="productOrdered__total_final">3 689</span> грн.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <hr class="orderCheckout__divider">
+        <div class="order__total"><span>9 769,15</span> грн.</h3>
+      </section>
+    </div>
   </main>
+  <script src="js/main.js"></script>
 </body>
-
 </html>

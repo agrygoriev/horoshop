@@ -1,12 +1,14 @@
 "use strict";
 const gulp = require("gulp");
+const sourcemaps = require("gulp-sourcemaps");
+const babel = require("gulp-babel");
+const concat = require("gulp-concat");
 const sass = require("gulp-sass");
 const postcss = require("gulp-postcss");
 const cssnext = require("postcss-cssnext");
 const cssnano = require("cssnano");
 const htmlmin = require("gulp-htmlmin");
 const uglify = require("gulp-uglify");
-// const pump = require("pump");
 const browserSync = require("browser-sync").create();
 const reload = browserSync.reload;
 const path = {
@@ -53,7 +55,8 @@ gulp.task("sass", () => {
         "> 1%",
         "last 5 versions",
         "ie>10"
-      ]
+      ],
+      warnForDuplicates: false
     }),
     cssnano({
       preset: ["advanced", {
@@ -68,8 +71,12 @@ gulp.task("sass", () => {
     .pipe(gulp.dest(path.dist.css));
 });
 gulp.task("js", () => {
-  gulp.src(path.src.js) 
-    .pipe(uglify()) 
+  gulp.src(path.src.js)
+    .pipe(sourcemaps.init())
+    .pipe(babel())
+    .pipe(concat("main.js"))
+    .pipe(uglify())
+    .pipe(sourcemaps.write(".")) 
     .pipe(gulp.dest(path.dist.js));
 });
 gulp.task("img", () =>

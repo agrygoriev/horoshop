@@ -1,0 +1,46 @@
+.orderCheckout {
+  padding: 30px 0;
+  background: #fff;
+  border: 1px solid $dark-yellow;
+  border-bottom-left-radius: $corner-radius;
+  border-bottom-right-radius: $corner-radius;
+  &__heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  &_hidden {
+    display: none;
+  }
+  &Button {
+    height: 33px;
+    width: 195px;
+    border-radius: 16px;
+    color: #fff;
+    background: $green-color;
+    background-image: linear-gradient(to bottom, #67c022, #4aac11);
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 1px #1f7f04;
+    &:hover {
+      background-image: linear-gradient(to bottom, #59a61d, #3d8a10);
+    }
+    &:active {
+      box-shadow: none;
+      background-image: linear-gradient(to top, #67c022, #4aac11);
+    }
+  }
+  &__divider {
+    // background-color: #fff;
+    border-top: 1px dotted $dark-yellow;
+    margin-bottom: 18px;
+  }
+  .formPart {
+    padding: 0 30px;
+    &:last-of-type {
+      padding-left: 180px;
+    }
+  }
+}

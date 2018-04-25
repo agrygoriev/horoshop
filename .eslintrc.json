@@ -23,6 +23,14 @@
         "semi": [
             "error",
             "always"
+        ],
+        "no-undef": [
+            "error",
+            "warn"
+        ],
+        "no-console": [
+            "error",
+            "off"
         ]
     }
 }
