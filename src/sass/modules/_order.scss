@@ -3,9 +3,13 @@
   border: 1px solid $dark-yellow;
   border-radius: $corner-radius;
   box-sizing: border-box;
-  flex: 0 1 auto;
+  flex: 0 1 390px;
   height: 100%;
   padding: 0 0 20px;
+  @media screen and (max-width: 1024px){
+    flex: 0;
+    width: 390px;
+  }
   &__heading {
     padding: 20px 20px 10px;
     font-weight: bold;

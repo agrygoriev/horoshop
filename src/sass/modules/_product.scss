@@ -1,12 +1,23 @@
 .productInfo {
   display: flex;
-  width: 350px;
+  flex: 0 1 350px;
   padding: 0 20px;
   justify-content: space-between;
+  &__image {
+    margin-right: 20px;
+  }
   .productDescription {
-    flex-basis: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
     font-size: 14px;
-    color: $blue-color;
+    &__link {
+      color: $blue-color;
+      &:visited {
+        color: $blue-color;
+      }
+    }
   }
   .productOrdered {
     display: flex;

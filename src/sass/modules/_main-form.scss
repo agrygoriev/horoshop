@@ -3,6 +3,11 @@
   flex-direction: column;
   flex-basis: 810px;
   box-sizing: border-box;
-  // background: #fff;
-  // border: 1px solid #e0dfca;
+  margin-right: 30px;
+  @media screen and (max-width:1024px) {
+    width: 810px;
+    flex-basis: auto;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
 }
